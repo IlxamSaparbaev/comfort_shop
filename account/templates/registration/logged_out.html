@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Log-out page
+{% endblock %}
+
+{% block content %}
+    <p>
+        Siz akkauntin'izdan shiqtin'iz.
+        Siz ja'ne kiriwin'iz mumkin <a id="logout" href="{% url 'login' %}">kiriw</a> 
+    </p>
+{% endblock %}

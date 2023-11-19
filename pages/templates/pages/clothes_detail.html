@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Clothes
+{% endblock title %}
+
+{% block content %}
+
+
+        <div class="transport-products">
+            <div class="product1">
+                <h1 class="title">{{ cloth.title }}</h1>
+                <img src="{{ cloth.image.url }}" alt="">
+                <p class="description">{{ cloth.description }}</p>
+                <p class="price">Цена: {{ cloth.price }}$</p>
+                <p>Author: {{ cloth.author }}</p>
+            </div>
+        </div>
+
+{% endblock %}

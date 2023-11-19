@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Furniture
+{% endblock title %}
+
+{% block content %}
+
+
+        <p>
+            Mebellar
+        </p>
+
+    {% for furniture in furnitures %}
+        <div class="transport-products">
+            <div class="product">
+                <h1>{{ furniture.title }}</h1>
+                <a href="{% url 'furniture_detail' furniture.pk %}">
+                    <img src="{{ furniture.image.url }}" alt="">
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

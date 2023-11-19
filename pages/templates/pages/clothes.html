@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Clothes
+{% endblock title %}
+
+{% block content %}
+
+        <p>
+            Kiyimlar
+        </p>
+
+    {% for cloth in clothes %}
+        <div class="transport-products">
+            <div class="product">
+                <h1>{{ cloth.title }}</h1>
+                <a href="{% url 'clothes_detail' cloth.pk  %}">
+                    <img src="{{ cloth.image.url }}" alt="">
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

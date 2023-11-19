@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Home page
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+        <header>
+            <div class="prog">
+                <a href="{% url 'sport' %}">
+                    <img src="{% static 'images/png/prg.png' %}" alt="">
+                </a>
+            </div>
+            <div class="lgn">
+                {% if request.user.is_authenticated %}
+                    Sa'lem, {{request.user.first_name|default:request.user.username}}
+                    <a class="lgo" href="{% url 'logout' %}">Chig'iw</a>
+                {% else %}
+                    <a class="llg" href="{% url 'login' %}">Kiriw</a>
+                {% endif %}
+                
+            </div>
+            <div class="logo">
+                <a href="{% url 'electronics' %}">
+                    <img src="{% static  'images/png/cm.png'%}" alt="logo">
+                </a>
+            </div>
+        </header>
+        
+       
+        {% include 'includes/navbar.html' %}
+        {% block content %}
+
+        {% endblock %}
+        {% include 'includes/fotter.html' %}
+
+    </div> 
+ 
+</body>
+</html>
+ 
